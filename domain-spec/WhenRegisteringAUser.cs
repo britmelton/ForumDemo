@@ -10,5 +10,12 @@ namespace Domain.Spec
             var user = new User("johndoe");
             user.Username.Should().Be("johndoe");
         }
+
+        [Fact]
+        public void ThenIdIsSet()
+        {
+            var user = new User("johndoe");
+            user.Id.Should().NotBeEmpty();
+        }
     }
 }
