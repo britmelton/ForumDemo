@@ -7,8 +7,9 @@ namespace Domain.Spec
         private readonly User _user;
         public WhenRegisteringAUser()
         {
-             _user = new User("johndoe");
+             _user = new User("johndoe", "1234");
         }
+
         [Fact]
         public void ThenUsernameIsSet()
         {
@@ -19,6 +20,12 @@ namespace Domain.Spec
         public void ThenIdIsSet()
         {
             _user.Id.Should().NotBeEmpty();
+        }
+
+        [Fact]
+        public void ThenPasswordIsSet()
+        {
+            _user.Password.Should().Be("1234");
         }
     }
 }
