@@ -4,18 +4,21 @@ namespace Domain.Spec
 {
     public class WhenRegisteringAUser
     {
+        private readonly User _user;
+        public WhenRegisteringAUser()
+        {
+             _user = new User("johndoe");
+        }
         [Fact]
         public void ThenUsernameIsSet()
         {
-            var user = new User("johndoe");
-            user.Username.Should().Be("johndoe");
+            _user.Username.Should().Be("johndoe");
         }
 
         [Fact]
         public void ThenIdIsSet()
         {
-            var user = new User("johndoe");
-            user.Id.Should().NotBeEmpty();
+            _user.Id.Should().NotBeEmpty();
         }
     }
 }
