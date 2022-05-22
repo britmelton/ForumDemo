@@ -5,6 +5,7 @@ using System.Net.Http.Json;
 
 namespace Api.Spec
 {//only testing api
+    [Collection("storage")]
     public class WhenRegisteringAUser : WebApiFixture
     {
         public WhenRegisteringAUser(IntegrationTestingFactory<Program> factory) 
