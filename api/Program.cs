@@ -1,3 +1,4 @@
+using app_services;
 using Domain;
 using infrastructure;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,7 @@ builder.Services.AddDbContext<Context>(options => options.UseSqlServer(
     ));
 
 builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<IUserService, UserService>();
 
 
 

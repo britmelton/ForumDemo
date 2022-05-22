@@ -17,6 +17,7 @@
 		<InternalVisibleTo Include="Api.Spec" />
 	</ItemGroup>
 	<ItemGroup>
+	  <ProjectReference Include="..\app-services\app-services.csproj" />
 	  <ProjectReference Include="..\domain\domain.csproj" />
 	  <ProjectReference Include="..\infrastructure\infrastructure.csproj" />
 	</ItemGroup>
