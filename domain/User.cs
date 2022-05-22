@@ -7,12 +7,12 @@
         public string Password { get; }
         public DateTime Birthday { get; }
 
-        public User(string username, string password, DateTime birthday)
+        public User(string username, string password, DateTime birthday, Guid id = default)
         {
-            Username = username;
-            Id = Guid.NewGuid();
+            Username = username;        
             Password = password;
             Birthday = birthday;
+            Id = id == default ? Guid.NewGuid() : id;
         }
     }
 }

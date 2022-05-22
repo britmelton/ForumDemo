@@ -20,11 +20,8 @@ namespace Api.Spec
             var result = await HttpClient.PostAsJsonAsync("", dto);
 
             //call finduser api route and confirm the user we got exists 
-            var user = await HttpClient.GetFromJsonAsync("", typeof (UserDto));
+            var user = await HttpClient.GetFromJsonAsync(result.Headers.Location, typeof(UserDto));
             user.Should().NotBeNull();
-
-
-
         }
     }
 }
