@@ -19,6 +19,14 @@ namespace infrastructure
             
         }
 
+        public IEnumerable<DomainUser> Fetch()
+        {
+            var users = context.User.Select(x => new DomainUser(x.Username, x.Password, x.Birthday, x.Id)).ToList();
+            //says for each user we get back transform into domainuser
+            return users;
+
+        }
+
         public DomainUser Find(Guid id)
         {
             User user = context.User.Find(id);

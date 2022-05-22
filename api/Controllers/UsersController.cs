@@ -19,7 +19,6 @@ namespace api.Controllers
             _userService = userService;
         }
 
-
         [HttpPost]
         public IActionResult RegisterUser([FromBody] RegisterUserDto dto)
         {
@@ -37,6 +36,14 @@ namespace api.Controllers
             var user = _userRepo.Find(id);
             var userDto = new UserDto(user.Username, user.Birthday);
             return userDto;
+
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<UserDto>> Fetch()
+        {
+            var users = _userRepo.Fetch().Select(x => new UserDto (x.Username, x.Birthday)).ToList();
+            return users;
 
         }
     }

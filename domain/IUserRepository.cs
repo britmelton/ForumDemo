@@ -10,5 +10,7 @@ namespace Domain
     {
         public void Create(User user);
         public User Find(Guid id);
+        public IEnumerable<User> Fetch();
+
     }
 }
